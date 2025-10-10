@@ -11,7 +11,7 @@ const UploadDocument = () => {
     const formData = new FormData(event.target);
 
     try {
-      const res = await axios.post('http://localhost:3001/upload', formData, {
+      const res = await axios.post('http://54.234.124.157:3001/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

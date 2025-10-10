@@ -19,7 +19,7 @@ const LoginPage = () => {
     console.log(formData);
 
     try {
-      const response = await axios.post("http://localhost:3001/login", {formData});
+      const response = await axios.post("http://54.234.124.157:3001/login", {formData});
       console.log(response.data.token);
      if(response.data.isAdmin){
       message.success("Login succesfull")

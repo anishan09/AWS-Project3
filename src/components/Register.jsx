@@ -24,7 +24,7 @@ const RegisterPage = () => {
         city
       };
     
-      const response = await axios.post("http://localhost:3001/register", {formData});
+      const response = await axios.post("http://54.234.124.157:3001/register", {formData});
       console.log(response);
       if (response.data === 201) {
         navigate("/login");

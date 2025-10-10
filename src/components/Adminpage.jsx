@@ -33,7 +33,7 @@ const AdminPage = () => {
 
     useEffect(() => {
         const cookie = Cookies.get("_id");
-        axios.get('http://localhost:3001/admin',{cookie})
+        axios.get('http://54.234.124.157:3001/admin',{cookie})
             .then(response => {
                 const appointments = response.data;
                 setAppointments(appointments);
@@ -72,7 +72,7 @@ const AdminPage = () => {
 
     const handleOk = () => {
         setLoading(prev => ({ ...prev, [currentItem._id]: true }));
-        axios.put(`http://localhost:3001/admin/${currentItem._id}/schedule`)
+        axios.put(`http://54.234.124.157:3001/admin/${currentItem._id}/schedule`)
             .then(response => {
                 setAppointments(prev => prev.map(item => item._id === currentItem._id ? { ...item, status: 'Scheduled' } : item));
                 setScheduled(prev => prev + 1);
@@ -88,7 +88,7 @@ const AdminPage = () => {
 
     const handleCancelAppointment = (id) => {
         setLoading(prev => ({ ...prev, [id]: true }));
-        axios.put(`http://localhost:3001admin/${id}/cancel`)
+        axios.put(`http://54.234.124.157:3001admin/${id}/cancel`)
             .then(response => {
                 setAppointments(prev => prev.map(item => item._id === id ? { ...item, status: 'Canceled' } : item));
                 setCanceled(prev => prev + 1);

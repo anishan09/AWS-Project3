@@ -11,7 +11,7 @@ const MyAppointmentPage = () => {
     useEffect(() => {
         // Fetch user's appointment data from the backend
         
-        axios.get('http://localhost:3001/my-appointments', {
+        axios.get('http://54.234.124.157:3001/my-appointments', {
             withCredentials: true
         })
         .then(response => {
